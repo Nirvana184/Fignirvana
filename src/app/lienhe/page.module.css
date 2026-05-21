@@ -1,0 +1,248 @@
+/* Dùng chung cho: tin-tuc, gioi-thieu, lien-he */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #121212;
+  color: #ccc;
+}
+
+/* ── Page banner (tiêu đề đầu trang) ───────── */
+.pageBanner {
+  background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
+  border-bottom: 1px solid #222;
+  padding: 56px 24px;
+  text-align: center;
+}
+.pageTitle {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  font-family: Georgia, serif;
+  margin-bottom: 10px;
+}
+.pageDesc { font-size: 14px; color: #666; }
+
+/* ── Section ─────────────────────────────────── */
+.section { padding: 56px 0 80px; }
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.innerNarrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ── Tin tức: post grid ──────────────────────── */
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .postGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .postGrid { grid-template-columns: 1fr; } }
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.postCard:hover { border-color: #d4af6a44; transform: translateY(-3px); }
+
+.postImg {
+  position: relative;
+  height: 200px;
+  background: #111;
+  overflow: hidden;
+}
+.postImg img { transition: transform 0.4s; }
+.postCard:hover .postImg img { transform: scale(1.04); }
+
+.postBody { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.postMeta { display: flex; justify-content: space-between; align-items: center; }
+.postCategory {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d4af6a;
+}
+.postDate { font-size: 11px; color: #555; }
+.postTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ddd;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.postExcerpt {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.7;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.readMore { font-size: 12px; color: #d4af6a; margin-top: auto; }
+
+/* ── Giới thiệu: blocks ──────────────────────── */
+.block { display: flex; flex-direction: column; gap: 14px; }
+.blockTitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d4af6a;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #222;
+}
+.block p { font-size: 14px; color: #777; line-height: 1.9; }
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 600px) { .valueGrid { grid-template-columns: 1fr; } }
+
+.valueCard {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+.valueCard:hover { border-color: #d4af6a44; }
+.valueIcon { font-size: 24px; }
+.valueTitle { font-size: 13px; font-weight: 700; color: #ddd; }
+.valueDesc { font-size: 13px; color: #666; line-height: 1.7; }
+
+/* ── Liên hệ: info grid ──────────────────────── */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 900px) { .infoGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .infoGrid { grid-template-columns: 1fr; } }
+
+.infoCard {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+.infoIcon { font-size: 28px; }
+.infoTitle { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #d4af6a; text-transform: uppercase; }
+.infoLine { font-size: 13px; color: #777; line-height: 1.6; }
+
+/* ── Liên hệ: form ───────────────────────────── */
+.formWrap {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 40px;
+}
+@media (max-width: 600px) { .formWrap { padding: 24px 16px; } }
+
+.formTitle {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d4af6a;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #222;
+}
+.form { display: flex; flex-direction: column; gap: 20px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #666; }
+.input, .textarea {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #ddd;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+.input:focus, .textarea:focus { border-color: #d4af6a; }
+.input::placeholder, .textarea::placeholder { color: #444; }
+.textarea { resize: vertical; }
+
+.submitBtn {
+  align-self: flex-start;
+  background: #d4af6a;
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 32px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.submitBtn:hover { background: #c49a50; transform: translateY(-1px); }
+
+.thankYou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px;
+  text-align: center;
+  color: #888;
+}
+.thankYou span { font-size: 40px; }
+.thankYou p { font-size: 15px; }
+
+/* ── Empty state (dùng chung) ────────────────── */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 24px;
+  border: 1px dashed #2a2a2a;
+  border-radius: 4px;
+  text-align: center;
+  color: #555;
+}
+.empty span { font-size: 40px; }
+.empty p { font-size: 15px; color: #666; }
+.empty small { font-size: 12px; color: #444; }
+.empty code { color: #d4af6a; }

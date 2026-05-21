@@ -1,0 +1,184 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #121212;
+  color: #ccc;
+}
+
+/* ── Hero ───────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+@media (max-width: 600px) { .hero { height: 240px; } }
+
+.heroBg { filter: brightness(0.35); }
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 14px;
+}
+.breadcrumb a { color: #777; text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: #d4af6a; }
+
+.heroTitle {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+  font-family: Georgia, serif;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.heroDesc {
+  font-size: 14px;
+  color: #aaa;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* ── Section ────────────────────────────────── */
+.section { padding: 48px 0 80px; }
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Type grid — 2 cột ngang để tận dụng không gian ── */
+.typeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 680px) {
+  .typeGrid { grid-template-columns: 1fr; }
+}
+
+/* ── Type card ──────────────────────────────── */
+.typeCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #1e1e1e;
+  background: #161616;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.typeCard:hover {
+  border-color: #d4af6a55;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  transform: translateY(-3px);
+}
+
+/* Ảnh */
+.typeImg {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: #111;
+}
+.typePhoto {
+  transition: transform 0.5s ease;
+  filter: brightness(0.72);
+}
+.typeCard:hover .typePhoto {
+  transform: scale(1.05);
+  filter: brightness(0.5);
+}
+.typeImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #161616 0%, transparent 55%);
+}
+
+/* Nội dung */
+.typeBody {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.typeTag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d4af6a;
+  background: rgba(212,175,106,0.1);
+  border: 1px solid rgba(212,175,106,0.25);
+  padding: 3px 10px;
+  border-radius: 2px;
+  align-self: flex-start;
+}
+
+.typeLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.typeCode {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  font-family: Georgia, serif;
+  letter-spacing: -0.5px;
+}
+.typeFull {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+}
+
+.typeDesc {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.typeFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #222;
+  margin-top: auto;
+}
+.typeCount {
+  font-size: 12px;
+  color: #555;
+}
+.typeArrow {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d4af6a;
+  letter-spacing: 0.3px;
+  transition: letter-spacing 0.2s;
+}
+.typeCard:hover .typeArrow {
+  letter-spacing: 1px;
+}

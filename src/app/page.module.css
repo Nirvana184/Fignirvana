@@ -1,0 +1,239 @@
+/* ── Page wrapper ──────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #121212;
+  color: #ccc;
+}
+
+/* ── Hero category grid ─────────────────────── */
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 420px;
+}
+@media (max-width: 900px) {
+  .heroGrid { grid-template-columns: repeat(2, 1fr); height: auto; }
+}
+@media (max-width: 540px) {
+  .heroGrid { grid-template-columns: 1fr; }
+}
+
+.heroCard {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 420px;
+  text-decoration: none;
+}
+@media (max-width: 900px) { .heroCard { height: 260px; } }
+
+.heroCard img { transition: transform 0.6s ease; }
+.heroCard:hover img { transform: scale(1.06); }
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 20px;
+}
+.heroSub {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d4af6a;
+  margin-bottom: 6px;
+}
+.heroLabel {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+/* ── Generic section ─────────────────────────── */
+.section {
+  padding: 60px 0;
+}
+.sectionInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d4af6a;
+  margin-bottom: 32px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #222;
+}
+
+/* ── Product grid ────────────────────────────── */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) { .productGrid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 620px) { .productGrid { grid-template-columns: repeat(2, 1fr); } }
+
+.empty {
+  grid-column: 1/-1;
+  color: #555;
+  font-size: 13px;
+  text-align: center;
+  padding: 40px;
+  border: 1px dashed #2a2a2a;
+  border-radius: 4px;
+}
+.empty code { color: #d4af6a; }
+
+/* ── Product card ────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  border-color: #d4af6a44;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  background: #d4af6a;
+  color: #111;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Image area */
+.cardImgWrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: #111;
+  overflow: hidden;
+}
+.imgMain, .imgHover {
+  transition: opacity 0.4s ease;
+}
+.imgHover { opacity: 0; }
+.card:hover .imgMain { opacity: 0; }
+.card:hover .imgHover { opacity: 1; }
+
+.quickView {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  background: rgba(212,175,106,0.92);
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+  text-transform: uppercase;
+}
+.card:hover .quickView { transform: translateY(0); }
+
+/* Card body */
+.cardBody {
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.cardCategory {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d4af6a;
+}
+.cardName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ddd;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cardPrice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+.price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #d4af6a;
+}
+.oldPrice {
+  font-size: 12px;
+  color: #555;
+}
+
+/* ── Pledge section ──────────────────────────── */
+.pledgeSection {
+  padding: 48px 0;
+  border-top: 1px solid #1e1e1e;
+  background: #0e0e0e;
+}
+.pledgeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+@media (max-width: 700px) { .pledgeGrid { grid-template-columns: 1fr; } }
+
+.pledgeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 32px 20px;
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+.pledgeCard:hover { border-color: #d4af6a44; }
+.pledgeIcon { font-size: 32px; }
+.pledgeTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+.pledgeDesc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.7;
+}
